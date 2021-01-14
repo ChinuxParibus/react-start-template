@@ -4,7 +4,7 @@
   "description": "Proyecto para ilustrar el uso de React y de Webpack",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack --mode development && webpack serve --mode development --open",
+    "start": "webpack serve --mode development",
     "build": "webpack --mode production"
   },
   "keywords": [
@@ -16,6 +16,7 @@
   "author": "Jhony Grillet <grilletjhony@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
@@ -23,7 +24,9 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@popperjs/core": "^2.6.0",
     "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.1",
     "html-webpack-plugin": "^4.5.1",
     "sass": "^1.32.4",
