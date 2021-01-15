@@ -28,14 +28,18 @@ module.exports = {
   module: {
     rules: [
       { // Para archivos CSS o SCSS (compilables)
-        test: /\.s?css$/,
+        test: /\.s?css$/i,
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       { // Para archivos Javascript (que no estén dentro de node_modules)
-        test: /\.js$/,
+        test: /\.jsx?$/i,
         exclude: /node_modules/,
         use: ['babel-loader']
-      }
+      },
+      { // Para imágenes, Webpack tiene su propio convertidor de recursos
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ]
   },
   /**
