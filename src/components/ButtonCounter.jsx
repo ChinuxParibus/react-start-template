@@ -1,40 +1,38 @@
-import React from 'react'
-import PropTypes from 'prop-types' // instalar con npm install prop-types
+import React, {useEffect} from 'react'
 
-export default class ButtonCounter extends React.Component {
-  constructor(props) {
-    super(props)
+export default function ButtonCounter () {
+  const [counter, setCounter] = React.useState(0)
 
-    this.state = {
-      counter: this.props.seconds // props asignados al componente desde afuera
-    }
+  function increment() {
+    setCounter(counter + 1)
   }
 
-  componentDidMount() {
+  // Se ejecuta cuando se monta el componente (componentDidMount())
+  React.useEffect(() => {
+    console.log('Se ejecuta la primera vez')
+  }, [])
+
+  // Se ejecuta cuando se modifica alguno de los estados del componente (componentDidUpdate())
+  React.useEffect(() => {
+    console.log('se ejecuta cada vez que se modifica')
+  }, [counter])
+
+// NO USAR ESTO NUNCA
+/*  React.useEffect(() => {
+    setCounter(counter + 1)
+  })
+*/
+
+/*  componentDidMount() {
     setInterval(() => {
       this.increment()
     }, 1000)
   }
-
-  increment() {
-    this.setState({ counter: this.state.counter + 1 })
-  }
-
-  render() {
-    return (
-      <div className="container mt-4 border border-success lead">
-        <h2>{ this.state.counter }</h2>
-      </div>
-    )
-  }
-}
-
-// Definición de los prop types
-ButtonCounter.propTypes = {
-  seconds: PropTypes.number
-}
-
-// Valores por defecto de los prop types en caso de que fallen estos.
-ButtonCounter.defaultProps = {
-  seconds: 0
+*/
+  return (
+    <>
+      <div className="lead text-bold m-4">{counter}</div>
+      <button onClick={increment}>Cambia</button>
+    </>
+  )
 }
