@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import ButtonCounter from './components/ButtonCounter.jsx'
+import API from './components/API.jsx'
 
 ReactDOM.render(
-  <ButtonCounter />,
+  <API />,
   document.querySelector('#app')
 )
 

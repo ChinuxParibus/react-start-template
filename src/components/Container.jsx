@@ -1,22 +1,14 @@
 import React from 'react'
+import Control from './Control.jsx'
 
-import Paleta from './Paleta.jsx'
+import ContextProvider from '../context/Provider.js'
 
-export default class Container extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
+export default function Container() {
+  return (
+    <ContextProvider>
       <div className="container">
-        <Paleta />
-        {/* Los props son atributos que reciben valores, dichos valores */}
-        {/* pueden ser personalizados desde el componente que se monta. */}
-        {/*<ButtonCounter seconds={60} />
-        <ButtonCounter seconds={100} />
-        <ButtonCounter seconds={40} />*/}
+        <Control />
       </div>
-    )
-  }
+    </ContextProvider>
+  )
 }
