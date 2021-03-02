@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import API from './components/API.jsx'
+import Container from './components/Container.jsx'
 
 ReactDOM.render(
-  <API />,
+  <Container />,
   document.querySelector('#app')
 )
 
