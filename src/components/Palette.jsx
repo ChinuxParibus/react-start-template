@@ -1,8 +1,7 @@
 import React from 'react'
-import Context from '../context/Context.js'
 
 export default function Palette() {
-  const { lightColor, setLightColor } = React.useContext(Context)
+  const [lightColor, setLightColor] = React.useState('black')
 
   return (
     <div className="mt-2">

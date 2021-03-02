@@ -1,5 +1,6 @@
 import React from 'react'
-import Control from './Control.jsx'
+import TodoList from './TodoList.jsx'
+import TodoInput from './TodoInput.jsx'
 
 import ContextProvider from '../context/Provider.js'
 
@@ -7,7 +8,8 @@ export default function Container() {
   return (
     <ContextProvider>
       <div className="container">
-        <Control />
+        <TodoInput />
+        <TodoList />
       </div>
     </ContextProvider>
   )
